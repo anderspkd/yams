@@ -44,7 +44,7 @@ def play_song(index):
         return "no such song"
 
 
-def stop_song()
+def stop_song():
     pass
 
 
