@@ -22,7 +22,8 @@ def add_song(url):
     playing = True
     
     for song in SONGS:
-        if url in song:
+
+        if song['url'] == url:
             print(url, "already exists")
             return
 
@@ -33,7 +34,8 @@ def add_song(url):
     true_url, title = find_true_url(url)
 
     SONGS.append({
-        'url': true_url,
+        'url': url,
+        'true_url': true_url,
         'title': title,
         'playing': playing
     })
