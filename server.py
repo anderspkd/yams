@@ -14,6 +14,11 @@ def play():
     return redirect("/")
 
 
+@app.route("/play_existing", methods=["POST"])
+def play_existing():
+    pass
+
+
 @app.route("/stop")
 def stop():
     pass

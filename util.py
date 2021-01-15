@@ -27,7 +27,8 @@ def add_song(url):
 
     SONGS[url] = {
         'url': true_url,
-        'title': title
+        'title': title,
+        'playing': 1
     }
 
 
