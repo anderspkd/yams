@@ -5,9 +5,7 @@ SONGS = []
 CURRENT_SONG = None
 
 def find_true_url(url):
-
-    assert isinstance(url, str)
-    
+    # TODO: youtube-dl has a python api. Use that instead of subprocess.
     out = subprocess.run(
         ["youtube-dl", "-j", "-f", "bestaudio", "-g", url],
         stdout=subprocess.PIPE)
@@ -19,9 +17,7 @@ def find_true_url(url):
 
 
 def add_song(url):
-
     playing = True
-    
     for song in SONGS:
         if song['url'] == url:
             print(url, "already exists")

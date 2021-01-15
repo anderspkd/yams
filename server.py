@@ -16,17 +16,26 @@ def play():
 
 @app.route("/play_existing", methods=["POST"])
 def play_existing():
-    return play_song(int(request.form("index")))
+    play_song(int(request.form("index")))
+    return ""
+
+
+@app.route("/queue", methods=["POST"])
+def queue():
+    add_song(request.form["link"]);
+    return ""
 
 
 @app.route("/stop")
 def stop():
     stop_song()
+    return ""
 
 
 @app.route("/pause_or_resume")
 def pause_or_resume():
     pause_or_resume_song()
+    return ""
 
 
 @app.route("/playing")
