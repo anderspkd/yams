@@ -2,6 +2,7 @@ import subprocess
 import json
 
 SONGS = []
+CURRENT_SONG = None
 
 def find_true_url(url):
 
@@ -22,23 +23,33 @@ def add_song(url):
     playing = True
     
     for song in SONGS:
-
         if song['url'] == url:
             print(url, "already exists")
             return
-
-        if song['playing'] == 1:
-            playing = False
-        
         
     true_url, title = find_true_url(url)
 
-    SONGS.append({
+    song = {
         'url': url,
         'true_url': true_url,
         'title': title,
-        'playing': playing
-    })
+    }
+
+    SONGS.append(song)
+    CURRENT_SONG = song
+
+
+def play_song(index):
+    if index >= len(SONGS):
+        return "no such song"
+
+
+def stop_song()
+    pass
+
+
+def pause_or_resume_song():
+    pass
 
 
 if __name__ == "__main__":

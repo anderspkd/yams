@@ -10,23 +10,23 @@ def home():
 
 @app.route("/play", methods=["POST"])
 def play():
-    add_song(request.form['link'])
+    add_song(request.form["link"])
     return redirect("/")
 
 
 @app.route("/play_existing", methods=["POST"])
 def play_existing():
-    pass
+    return play_song(int(request.form("index")))
 
 
 @app.route("/stop")
 def stop():
-    pass
+    stop_song()
 
 
-@app.route("/pause")
-def pause():
-    pass
+@app.route("/pause_or_resume")
+def pause_or_resume():
+    pause_or_resume_song()
 
 
 @app.route("/playing")
